@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bonheur+Royale&family=Cedarville+Cursive&family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* font-family: 'Bebas Neue', sans-serif; */
+/* font-family: 'Cedarville Cursive', cursive; */
+/* font-family: 'Poppins', sans-serif; */
+*{
+  padding: 0;
+  margin:0
+}
+.cursive{
+  font-family: 'Bonheur Royale', cursive;
+}
+#root{
+  height:100vh;
+  width:100vw;
+  overflow: hidden;
+font-family: 'Bebas Neue', sans-serif;
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
