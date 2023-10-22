@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { ContactShadows, useGLTF, useScroll } from "@react-three/drei";
+import { ContactShadows, Wireframe, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame,useThree } from "@react-three/fiber";
 import {useContext} from "react"
 import { ThemeContext } from "./Context";
@@ -18,7 +18,7 @@ export function Car(props) {
     }
     if(scroll.offset>0.6){
       setTheme(1)
-      carRef.current.rotation.y +=delta/5
+      carRef.current.rotation.y +=delta/10
     }
   },[scroll])
   return (
@@ -30,6 +30,7 @@ export function Car(props) {
         dispose={null}
         scale={0.7}
       >
+        
         <mesh
           castShadow
           receiveShadow

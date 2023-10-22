@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { useState, useContext } from "react";
-import { ThemeContext } from "./Context";
+import { CarContext, ThemeContext } from "./Context";
 
 const Home = () => {
-  const { theme } = useContext(ThemeContext);
-  const cars = ["cybertruck", "challenger"];
+  const { theme,setTheme } = useContext(ThemeContext);
+  const {car,setCar} = useContext(CarContext)
+  const cars = ["cybertruck", "challenger","Hoverer"];
   const [count, setCount] = useState(0);
+  const themes=["#ff0000","#ffff00","#00ff00"]
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      style={theme&&{backgroundColor:themes[car-1]}}
       className={`absolute flex items-center justify-center top-0 h-screen w-full backdrop-blur-sm overflow-hidden p-16 text-2xl ${
-        theme && "bg-[#ff0000] border-[15px] border-black"
+        theme && `border-[20px] border-black`
       }`}
     >
       {!theme && (
@@ -22,6 +25,18 @@ const Home = () => {
           Scroll DOWN
         </div>
       )}
+
+{/* {!theme && (
+        <div
+          className=" absolute text-5xl z-50 self-center top-0 cursor-pointer right-0 text-transparent animate-pulse"
+          style={{ WebkitTextStroke: "1px black" }}
+          onClick={()=>setCar(prev=>prev+1)}
+        >
+          Next
+        </div>
+      )} */}
+
+
       {theme && (
         <motion.nav
         initial={{y:-100,opacity:0}}
@@ -42,7 +57,7 @@ const Home = () => {
         className=" absolute text-[224px] self-center text-transparent"
         style={{ WebkitTextStroke: "3px #00000050" }}
       >
-        #001
+        #00{car}
       </motion.div>
       {theme && (
         <motion.div
@@ -52,7 +67,7 @@ const Home = () => {
           className=" absolute text-[210px] self-center bottom-16 text-transparent"
           style={{ WebkitTextStroke: "4px black" }}
         >
-          {cars[count]}
+          {cars[car-1]}
         </motion.div>
       )}
     </motion.div>

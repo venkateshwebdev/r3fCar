@@ -15,8 +15,11 @@
 #root{
   height:100vh;
   width:100vw;
-  overflow: hidden;
-font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.normaltext{
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
 }
 
 *::-webkit-scrollbar{
